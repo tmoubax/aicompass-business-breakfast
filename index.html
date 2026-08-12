@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Pagina is op uitnodiging: noindex houdt ze uit Google. Verwijder deze regel als ze publiek mag ranken. -->
+<meta name="robots" content="noindex,nofollow">
+<title>Business Breakfast — The AI Compass · september 2026</title>
+<meta name="description" content="Vier besloten ontbijtsessies met Thierry Moubax, auteur van The AI Compass. Max. 6 CEO's per tafel — Mechelen, Antwerpen en Brugge. Vol is vol.">
+<link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf6ef; --paper:#fffdf8; --navy:#0c1a2e; --navy-2:#162847; --ink:#1a1715;
+    --muted:#6b655e; --line:#e7e2d6; --gold:#e8a838; --gold-deep:#c98a20;
+    --gold-line:rgba(232,168,56,.28); --gold-soft:rgba(232,168,56,.15);
+    --red:#c4453a; --r-sm:8px; --r-md:14px; --r-lg:22px; --r-xl:30px;
+    --shadow-sm:0 1px 3px rgba(12,26,46,.08);
+    --shadow-md:0 8px 24px rgba(12,26,46,.1);
+    --shadow-lg:0 24px 60px rgba(12,26,46,.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font:400 16px/1.7 Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--gold-soft)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  section{position:relative;padding:76px 0}
+  a{color:var(--gold-deep);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .eyebrow{display:inline-block;font:700 12px/1.4 Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+  h1,h2{font-family:Fraunces,serif;color:var(--navy);letter-spacing:-.01em}
+  h1{font-size:clamp(40px,5.6vw,62px);font-weight:700;line-height:1.06;margin:16px 0 20px}
+  h2{font-size:clamp(30px,4vw,42px);font-weight:650;line-height:1.12;margin:12px 0 16px}
+  h3{font:700 19px/1.35 Inter,sans-serif;color:var(--navy);margin-bottom:9px}
+  .lead{font-size:18px;color:var(--muted);max-width:56ch}
+  .goldline{width:64px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--gold-deep));margin:18px 0 0}
+
+  /* ---------- topbar ---------- */
+  header{background:var(--paper);border-bottom:1px solid var(--line)}
+  .topbar{max-width:1120px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+  .topbar img{height:32px;display:block}
+  .tagchip{font:600 10px/1 Inter,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);border:1px solid var(--gold-line);border-radius:999px;padding:10px 16px 9px;background:var(--gold-soft)}
+  @media(max-width:640px){.tagchip{display:none}}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-block;font:700 15px/1 Inter,sans-serif;border-radius:12px;padding:17px 30px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;border:none;text-decoration:none!important;text-align:center}
+  .btn-primary{color:#fff;background:var(--navy);box-shadow:var(--shadow-md)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--navy-2);box-shadow:var(--shadow-lg)}
+  .btn-primary:active{transform:translateY(1px)}
+  .btn-gold{color:var(--navy);background:linear-gradient(135deg,#f4c260,var(--gold));box-shadow:var(--shadow-md)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+  .btn-ghost{color:var(--navy);background:transparent;border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .btn[disabled]{opacity:.55;cursor:wait;transform:none!important}
+
+  /* ---------- hero ---------- */
+  .hero{padding:72px 0 84px;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 30px}
+  .chip{font:600 12px/1 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:11px 16px 10px;box-shadow:var(--shadow-sm)}
+  .chip strong{color:var(--gold-deep)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .hero-visual{position:relative}
+  .hero-visual .frame{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px;box-shadow:var(--shadow-lg)}
+  .hero-visual img{width:100%;display:block;border-radius:var(--r-md)}
+  .hero-caption{margin-top:14px;text-align:center;font:600 11px/1.6 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  @media(max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:44px}.hero{padding-top:48px}}
+
+  /* ---------- quote strip ---------- */
+  .quote-strip{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0}
+  .quote-strip blockquote{max-width:760px;margin:0 auto;text-align:center;font:500 clamp(20px,2.6vw,26px)/1.5 Fraunces,serif;color:var(--navy);font-style:italic}
+  .quote-strip cite{display:block;margin-top:14px;font:700 11px/1 Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);font-style:normal}
+
+  /* ---------- cards ---------- */
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px;box-shadow:var(--shadow-sm);transition:transform .16s ease,box-shadow .16s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:900px){.grid3{grid-template-columns:1fr}}
+  .card .num{font:700 34px/1 Fraunces,serif;color:var(--gold);display:block;margin-bottom:14px}
+  .card p{color:var(--muted);font-size:15px}
+
+  /* ---------- navy panel (waarom gratis) ---------- */
+  .navy-panel{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);border-radius:var(--r-xl);padding:52px 54px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;overflow:hidden;position:relative}
+  .navy-panel::before{content:"";position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(232,168,56,.22),transparent 70%)}
+  .navy-panel .eyebrow{color:var(--gold)}
+  .navy-panel h2{color:#fff}
+  .navy-panel p{color:#c6d0e0}
+  .navy-panel img{width:100%;display:block;border-radius:var(--r-md);box-shadow:0 18px 44px rgba(0,0,0,.4)}
+  .gift{margin-top:22px;padding:16px 20px;border-left:3px solid var(--gold);background:rgba(232,168,56,.1);border-radius:0 var(--r-sm) var(--r-sm) 0;color:#fff!important;font-weight:500}
+  @media(max-width:900px){.navy-panel{grid-template-columns:1fr;padding:38px 28px}}
+
+  /* ---------- video ---------- */
+  .video-frame{max-width:780px;margin:34px auto 0;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:14px;box-shadow:var(--shadow-lg)}
+  .video-frame video{width:100%;display:block;border-radius:var(--r-md);background:var(--navy)}
+  .video-note{text-align:center;margin-top:14px;font-size:13px;color:var(--muted)}
+
+  /* ---------- dates ---------- */
+  .dates-section{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .dates-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:36px 0 8px}
+  @media(max-width:980px){.dates-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:540px){.dates-grid{grid-template-columns:1fr}}
+  .date-card{position:relative;display:flex;flex-direction:column;gap:2px;cursor:pointer;background:var(--cream);border:2px solid var(--line);border-radius:var(--r-md);padding:22px 20px 18px;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease,background .15s ease}
+  .date-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+  .date-card input{position:absolute;opacity:0;pointer-events:none}
+  .dc-dow{font:700 11px/1.5 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep)}
+  .dc-city{font:650 30px/1.15 Fraunces,serif;color:var(--navy);margin-top:4px}
+  .dc-hotel{font:500 12.5px/1.5 Inter,sans-serif;color:var(--muted)}
+  .dc-time{font:500 12.5px/1.5 Inter,sans-serif;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+  .dc-seats{display:flex;align-items:center;gap:7px;font:600 12.5px/1 Inter,sans-serif;color:var(--navy);margin-top:9px}
+  .dc-seats .dot{width:8px;height:8px;border-radius:50%;background:#3e9e5c;flex:none}
+  .dc-seats.warn{color:#8a5a00}.dc-seats.warn .dot{background:var(--gold-deep)}
+  .date-card.selected{border-color:var(--gold);background:var(--gold-soft);box-shadow:var(--shadow-md)}
+  .date-card.selected::after{content:"✓";position:absolute;top:12px;right:12px;width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--navy);font:800 14px/26px Inter,sans-serif;text-align:center}
+  .dc-badge{display:none;position:absolute;top:14px;right:14px;font:700 10px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--red);border:1px solid rgba(196,69,58,.4);background:rgba(196,69,58,.08);border-radius:999px;padding:7px 11px 6px}
+  .date-card.full{opacity:.55;cursor:not-allowed}
+  .date-card.full:hover{transform:none;box-shadow:none}
+  .date-card.full .dc-badge{display:block}
+  .date-card.full .dc-seats{display:none}
+  .dates-note{font-size:13.5px;color:var(--muted)}
+
+  /* ---------- form ---------- */
+  .form-panel{margin-top:44px;background:var(--cream);border:1px solid var(--line);border-radius:var(--r-lg);padding:42px 44px;box-shadow:var(--shadow-sm)}
+  @media(max-width:640px){.form-panel{padding:30px 22px}}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;margin-top:26px}
+  @media(max-width:640px){.form-grid{grid-template-columns:1fr}}
+  .field{display:flex;flex-direction:column;gap:7px}
+  .field.wide{grid-column:1/-1}
+  .field label{font:700 12.5px/1 Inter,sans-serif;letter-spacing:.02em;color:var(--navy)}
+  .field label small{color:var(--muted);font-weight:500}
+  .field input,.field textarea{font:400 15px/1.5 Inter,sans-serif;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:13px 15px;outline:none;transition:border-color .15s ease,box-shadow .15s ease;width:100%}
+  .field textarea{min-height:88px;resize:vertical}
+  .field input:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft)}
+  .field input::placeholder,.field textarea::placeholder{color:#b3aca0}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+  .picked{display:flex;align-items:center;gap:10px;margin-top:24px;font:500 14px/1.5 Inter,sans-serif;color:var(--muted)}
+  .picked b{color:var(--navy);font-weight:700}
+  .submit-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:24px}
+  .submit-note{font:600 11px/1.6 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .form-msg{display:none;margin-top:18px;border-radius:12px;padding:14px 18px;font-size:14px}
+  .form-msg.err{display:block;background:rgba(196,69,58,.07);border:1px solid rgba(196,69,58,.35);color:#8f2f26}
+  .form-msg.warn{display:block;background:#fdf3e0;border:1px solid var(--gold-line);color:#7a5410}
+  .consent{font-size:12.5px;color:var(--muted);margin-top:16px}
+  .success{display:none;text-align:center;padding:26px 10px 10px}
+  .success .check{width:64px;height:64px;margin:0 auto 20px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f4c260,var(--gold));box-shadow:var(--shadow-md)}
+  .success .check svg{width:30px;height:30px}
+  .success h3{font:650 26px/1.2 Fraunces,serif}
+  .success p{max-width:46ch;margin:0 auto;color:var(--muted)}
+
+  /* ---------- locaties ---------- */
+  .loc-card{padding:0;overflow:hidden}
+  .loc-card img{width:100%;height:190px;object-fit:cover;display:block}
+  .loc-body{padding:22px 24px 24px}
+  .loc-body .dc-dow{display:block;margin-bottom:6px}
+  address{font-style:normal;color:var(--muted);font-size:14.5px;line-height:1.7}
+  .rooms{display:grid;grid-template-columns:1.25fr .75fr;gap:20px;margin-top:20px}
+  @media(max-width:820px){.rooms{grid-template-columns:1fr}}
+  .room-card{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+  .room-card img{width:100%;height:300px;object-fit:cover;display:block}
+  .room-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 20px;background:linear-gradient(transparent,rgba(12,26,46,.82));color:#fff;font:600 13px/1.5 Inter,sans-serif}
+
+  /* ---------- host ---------- */
+  .host .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+  @media(max-width:820px){.host .wrap{grid-template-columns:1fr;gap:36px}}
+  .host-photo{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:14px;box-shadow:var(--shadow-md);max-width:360px}
+  .host-photo img{width:100%;display:block;border-radius:var(--r-md)}
+  .host-sign{height:70px;margin:24px 0 8px;display:block}
+  .host-name{font:700 15px/1.5 Inter,sans-serif;color:var(--navy)}
+  .host-title{font:600 11px/1.7 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy);padding:46px 0 54px;margin-top:20px}
+  .foot{display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
+  footer img{height:28px;display:block}
+  .foot-links{display:flex;flex-wrap:wrap;gap:22px;font-size:14px}
+  .foot-links a{color:#c6d0e0}
+  .foot-links a:hover{color:var(--gold)}
+  .foot-tag{width:100%;margin-top:20px;font:600 10px/1 Inter,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#5c6b82}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <img src="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/logo-full.png" alt="AI Compass">
+    <span class="tagchip">Making AI Work For You</span>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Business Breakfast · september 2026</span>
+      <h1>Zes CEO's aan tafel. AI die écht rendeert.</h1>
+      <p class="lead">Na de uitverkochte lancering van <strong style="color:var(--navy)">The AI Compass</strong> en een geslaagde eerste ontbijtsessie in juli, gaat de reeks verder. Vier ochtenden in september — in <strong style="color:var(--navy)">Mechelen, Antwerpen en Brugge</strong> — telkens één tafel bij Van der Valk, met maximaal zes plaatsen. <strong style="color:var(--navy)">Vol is vol.</strong></p>
+      <div class="chips">
+        <span class="chip"><strong>Gratis</strong> · op uitnodiging</span>
+        <span class="chip">Max. <strong>6</strong> plaatsen</span>
+        <span class="chip">8u30 – 10u30</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#datums">Kies je stad &amp; ochtend</a>
+        <a class="btn btn-ghost" href="#video">Bekijk de video (90 sec.)</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="frame"><img src="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/book-hero.jpg" alt="The AI Compass — het boek van Thierry Moubax"></div>
+      <p class="hero-caption">Elke deelnemer krijgt een persoonlijk gesigneerd exemplaar</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUOTE ================= -->
+<div class="quote-strip">
+  <div class="wrap">
+    <blockquote>
+      “The roadmap to survival and thrive in the age of AI.”
+      <cite>Marc Decorte — Shell Belux</cite>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ================= VERWACHTEN ================= -->
+<section id="verwachten">
+  <div class="wrap">
+    <span class="eyebrow">Geen zaal. Eén tafel.</span>
+    <h2>Wat je mag verwachten</h2>
+    <div class="goldline"></div>
+    <div class="grid3" style="margin-top:34px">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>Eén tafel, geen zaal</h3>
+        <p>Maximaal zes CEO's, geen slidemarathon en geen verkooppraatje. Een eerlijk, scherp gesprek over waar AI in jouw bedrijf rendeert — en waar niet.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>Concreet, geen buzzwords</h3>
+        <p>We leggen de AI Scorecard en de Value Creation Matrix uit het boek op de bedrijven rond de tafel. Je vertrekt met een helder beeld van je eerste 90 dagen.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>Niet met lege handen buiten</h3>
+        <p>Ontbijt met koffie en verse croissants. En voor elke deelnemer: een persoonlijk gesigneerd exemplaar van <em>The AI Compass</em> (winkelwaarde €35).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WAAROM GRATIS ================= -->
+<section style="padding-top:24px">
+  <div class="wrap">
+    <div class="navy-panel">
+      <div>
+        <span class="eyebrow">Waarom gratis?</span>
+        <h2 style="max-width:16ch">Geen ticket. Wél commitment.</h2>
+        <p style="max-width:60ch">De lancering van <em>The AI Compass</em> in juni was een betalend event met een volle zaal. Deze ontbijtsessies zijn het besloten vervolg: kleiner, scherper, persoonlijker. Bewust gratis en op uitnodiging, omdat ik rond deze tafel beslissers wil, geen toeschouwers. Jij investeert twee uur van je ochtend; ik zorg voor de rest.</p>
+        <p class="gift">Je gesigneerd exemplaar van <em>The AI Compass</em> ligt klaar op je stoel.</p>
+      </div>
+      <img src="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/books-pile.jpg" alt="The AI Compass — gesigneerde exemplaren">
+    </div>
+  </div>
+</section>
+
+<!-- ================= VIDEO ================= -->
+<section id="video" style="padding-top:30px">
+  <div class="wrap" style="text-align:center">
+    <span class="eyebrow">Eerst even proeven?</span>
+    <h2>Het boek in 90 seconden</h2>
+    <div class="video-frame">
+      <video controls preload="metadata" poster="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/poster.jpg" id="bookVideo">
+        <source src="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/book-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="video-note">Geluid aan — het is er eentje met een knipoog. Speelt de video niet? Bekijk hem op <a href="https://www.theaicompassbook.com" target="_blank" rel="noopener">theaicompassbook.com</a>.</p>
+  </div>
+</section>
+
+<!-- ================= DATUMS + FORM ================= -->
+<section id="datums" class="dates-section">
+  <div class="wrap">
+    <span class="eyebrow">September 2026 · Mechelen — Antwerpen — Brugge</span>
+    <h2>Kies je stad en je ochtend</h2>
+    <div class="goldline"></div>
+    <p style="max-width:62ch;color:var(--muted);margin-top:18px">Onthaal vanaf 8u00, sessie van 8u30 tot 10u30. Zes plaatsen per tafel — de teller hieronder is live. Is jouw datum volzet? Kies gerust een andere ochtend of stad.</p>
+
+    <form id="regform" novalidate>
+      <div class="dates-grid" id="datesGrid">
+        <label class="date-card" data-session="2026-09-10">
+          <input type="radio" name="session" value="2026-09-10">
+          <span class="dc-dow">Do · 10 september</span>
+          <span class="dc-city">Mechelen</span>
+          <span class="dc-hotel">Van der Valk Hotel Mechelen</span>
+          <span class="dc-time">8u00 onthaal · 8u30–10u30</span>
+          <span class="dc-seats"><span class="dot"></span><span data-seats>max. 6 plaatsen</span></span>
+          <span class="dc-badge">Volzet</span>
+        </label>
+        <label class="date-card" data-session="2026-09-11">
+          <input type="radio" name="session" value="2026-09-11">
+          <span class="dc-dow">Vr · 11 september</span>
+          <span class="dc-city">Antwerpen</span>
+          <span class="dc-hotel">Van der Valk Hotel Antwerpen</span>
+          <span class="dc-time">8u00 onthaal · 8u30–10u30</span>
+          <span class="dc-seats"><span class="dot"></span><span data-seats>max. 6 plaatsen</span></span>
+          <span class="dc-badge">Volzet</span>
+        </label>
+        <label class="date-card" data-session="2026-09-17">
+          <input type="radio" name="session" value="2026-09-17">
+          <span class="dc-dow">Do · 17 september</span>
+          <span class="dc-city">Brugge</span>
+          <span class="dc-hotel">Van der Valk Brugge-Oostkamp</span>
+          <span class="dc-time">8u00 onthaal · 8u30–10u30</span>
+          <span class="dc-seats"><span class="dot"></span><span data-seats>max. 6 plaatsen</span></span>
+          <span class="dc-badge">Volzet</span>
+        </label>
+        <label class="date-card" data-session="2026-09-18">
+          <input type="radio" name="session" value="2026-09-18">
+          <span class="dc-dow">Vr · 18 september</span>
+          <span class="dc-city">Mechelen</span>
+          <span class="dc-hotel">Van der Valk Hotel Mechelen</span>
+          <span class="dc-time">8u00 onthaal · 8u30–10u30</span>
+          <span class="dc-seats"><span class="dot"></span><span data-seats>max. 6 plaatsen</span></span>
+          <span class="dc-badge">Volzet</span>
+        </label>
+      </div>
+      <p class="dates-note" id="waitlistNote" hidden>Alle tafels zijn op dit moment volzet. Laat hieronder je gegevens na: je komt op de wachtlijst en hoort het als eerste wanneer er een plaats vrijkomt of nieuwe datums bijkomen.</p>
+
+      <div class="form-panel">
+        <span class="eyebrow" id="formEyebrow">Reserveer je plaats</span>
+        <div class="picked">Gekozen ochtend: <b id="pickedLabel">— kies hierboven een datum</b></div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-voornaam">Voornaam *</label>
+            <input id="f-voornaam" name="voornaam" autocomplete="given-name" placeholder="Je voornaam" required>
+          </div>
+          <div class="field">
+            <label for="f-achternaam">Achternaam *</label>
+            <input id="f-achternaam" name="achternaam" autocomplete="family-name" placeholder="Je achternaam" required>
+          </div>
+          <div class="field">
+            <label for="f-bedrijf">Bedrijf *</label>
+            <input id="f-bedrijf" name="bedrijf" autocomplete="organization" placeholder="Naam van je bedrijf" required>
+          </div>
+          <div class="field">
+            <label for="f-functie">Functie <small>(optioneel)</small></label>
+            <input id="f-functie" name="functie" autocomplete="organization-title" placeholder="CEO, zaakvoerder, …">
+          </div>
+          <div class="field">
+            <label for="f-email">E-mail *</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="je@bedrijf.be" required>
+          </div>
+          <div class="field">
+            <label for="f-gsm">GSM <small>(optioneel — enkel voor last-minute wijzigingen)</small></label>
+            <input id="f-gsm" name="gsm" type="tel" autocomplete="tel" placeholder="+32 …">
+          </div>
+          <div class="field wide">
+            <label for="f-opmerkingen">Opmerkingen <small>(optioneel)</small></label>
+            <textarea id="f-opmerkingen" name="opmerkingen" placeholder="Dieetwensen, een vraag die zeker op tafel moet, iemand die je graag aan tafel ziet…"></textarea>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Website</label>
+            <input id="f-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn btn-gold" id="submitBtn">Reserveer mijn plaats</button>
+          <span class="submit-note">Gratis · geen verplichtingen</span>
+        </div>
+        <div class="form-msg" id="formMsg" role="alert"></div>
+        <p class="consent">Je ontvangt meteen een bevestiging met agenda-uitnodiging. Je gegevens gebruiken we enkel voor deze ontbijtsessies en worden nooit gedeeld.</p>
+
+        <div class="success" id="successPanel">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#0c1a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></div>
+          <h3 id="successTitle">Genoteerd!</h3>
+          <p id="successText"></p>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ================= LOCATIES ================= -->
+<section id="locaties">
+  <div class="wrap">
+    <span class="eyebrow">Drie steden, één formule</span>
+    <h2>De locaties</h2>
+    <div class="goldline"></div>
+    <p style="max-width:60ch;color:var(--muted);margin-top:18px">Telkens bij Van der Valk: vlot bereikbaar, parkeren aan het hotel, en om 10u30 sta je weer buiten. Beloofd.</p>
+
+    <div class="grid3" style="margin-top:34px">
+      <div class="card loc-card">
+        <img src="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/mechelen.jpg" alt="Van der Valk Hotel Mechelen">
+        <div class="loc-body">
+          <span class="dc-dow">Do 10 &amp; vr 18 september</span>
+          <h3>Van der Valk Hotel Mechelen</h3>
+          <address>Rode-Kruisplein 1, 2800 Mechelen</address>
+          <p style="margin-top:10px"><a href="https://maps.google.com/?q=Van+der+Valk+Hotel+Mechelen,+Rode-Kruisplein+1,+2800+Mechelen" target="_blank" rel="noopener">Routebeschrijving →</a></p>
+        </div>
+      </div>
+      <div class="card loc-card">
+        <img src="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/antwerpen.jpg" alt="Van der Valk Hotel Antwerpen">
+        <div class="loc-body">
+          <span class="dc-dow">Vr 11 september</span>
+          <h3>Van der Valk Hotel Antwerpen</h3>
+          <address>Luitenant Lippenslaan 66, 2140 Antwerpen</address>
+          <p style="margin-top:10px"><a href="https://maps.google.com/?q=Van+der+Valk+Hotel+Antwerpen,+Luitenant+Lippenslaan+66,+2140+Antwerpen" target="_blank" rel="noopener">Routebeschrijving →</a></p>
+        </div>
+      </div>
+      <div class="card loc-card">
+        <img src="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/oostkamp.jpg" alt="Van der Valk Hotel Brugge-Oostkamp">
+        <div class="loc-body">
+          <span class="dc-dow">Do 17 september</span>
+          <h3>Van der Valk Brugge-Oostkamp</h3>
+          <address>Kapellestraat 146, 8020 Oostkamp</address>
+          <p style="margin-top:10px"><a href="https://maps.google.com/?q=Van+der+Valk+Hotel+Brugge-Oostkamp,+Kapellestraat+146,+8020+Oostkamp" target="_blank" rel="noopener">Routebeschrijving →</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rooms">
+      <figure class="room-card">
+        <img src="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/zaal.jpg" alt="Vergaderzaal Van der Valk Hotel Mechelen">
+        <figcaption>De setting: één tafel, zes stoelen — geen zaal. (Van der Valk Mechelen)</figcaption>
+      </figure>
+      <figure class="room-card">
+        <img src="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/zalen.jpg" alt="Boardroom Van der Valk">
+        <figcaption>Rustige boardrooms, goede koffie, tijd om écht te praten.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOST ================= -->
+<section class="host" style="padding-top:20px">
+  <div class="wrap">
+    <div class="host-photo"><img src="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/thierry-light.jpg" alt="Thierry Moubax"></div>
+    <div>
+      <span class="eyebrow">Je gastheer</span>
+      <h2>Thierry Moubax</h2>
+      <div class="goldline"></div>
+      <p style="max-width:58ch;color:var(--muted);margin-top:18px">Thierry schreef <em>The AI Compass — the 90-day executive roadmap for AI</em>, met aanbevelingen van twintig CEO's uit twaalf landen. Als CEO en co-founder van AI Compass helpt hij directieteams om AI van dure experimenten naar meetbaar resultaat te brengen. Zijn motto aan tafel: <strong style="color:var(--navy)">pilot, not passenger</strong>.</p>
+      <img class="host-sign" src="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/signature-navy.png" alt="Handtekening Thierry Moubax">
+      <div class="host-name">Thierry Moubax</div>
+      <div class="host-title">Auteur van The AI Compass · CEO &amp; co-founder AI Compass</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot">
+    <img src="https://cdn.jsdelivr.net/gh/tmoubax/aicompass-business-breakfast@main/assets/img/logo-white.png" alt="AI Compass">
+    <nav class="foot-links">
+      <a href="mailto:thierry@aicompass.ai">thierry@aicompass.ai</a>
+      <a href="tel:+32472180365">+32 472 180 365</a>
+      <a href="https://www.aicompass.ai" target="_blank" rel="noopener">aicompass.ai</a>
+      <a href="https://www.theaicompassbook.com" target="_blank" rel="noopener">theaicompassbook.com</a>
+    </nav>
+    <div class="foot-tag">Making AI Work For You · © 2026 AI Compass · Besloten reeks, op uitnodiging</div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================================
+   CONFIG — één ding in te vullen:
+   Plak hieronder de web-app-URL van je Google Apps Script (zie SETUP-GIDS.md).
+   Zolang de placeholder blijft staan, valt het formulier terug op e-mail
+   (er opent een voorgevuld mailvenster naar thierry@aicompass.ai).
+   ========================================================================= */
+const ENDPOINT = "PLAK_HIER_JE_APPS_SCRIPT_URL";
+const FALLBACK_EMAIL = "thierry@aicompass.ai";
+const CAP = 6;
+
+const LABELS = {
+  "2026-09-10": "donderdag 10 september — Mechelen",
+  "2026-09-11": "vrijdag 11 september — Antwerpen",
+  "2026-09-17": "donderdag 17 september — Brugge (Oostkamp)",
+  "2026-09-18": "vrijdag 18 september — Mechelen",
+  "wachtlijst": "de wachtlijst"
+};
+
+const live = /^https:\/\//.test(ENDPOINT);
+const form = document.getElementById("regform");
+const grid = document.getElementById("datesGrid");
+const msg = document.getElementById("formMsg");
+const btn = document.getElementById("submitBtn");
+const pickedLabel = document.getElementById("pickedLabel");
+const waitlistNote = document.getElementById("waitlistNote");
+let waitlistMode = false;
+
+/* ---------- video: sectie verbergen als het bestand ontbreekt ---------- */
+document.getElementById("bookVideo").addEventListener("error", hideVideo, true);
+document.querySelector("#bookVideo source").addEventListener("error", hideVideo);
+function hideVideo(){ document.getElementById("video").style.display = "none"; }
+
+/* ---------- selectie ---------- */
+grid.addEventListener("change", () => {
+  document.querySelectorAll(".date-card").forEach(c => {
+    c.classList.toggle("selected", c.querySelector("input").checked);
+  });
+  const sel = selectedSession();
+  if (sel) { pickedLabel.textContent = LABELS[sel]; hideMsg(); }
+});
+function selectedSession(){
+  const r = form.querySelector('input[name="session"]:checked');
+  return r ? r.value : null;
+}
+
+/* ---------- live bezetting ---------- */
+async function loadAvailability(){
+  if (!live) return;
+  try {
+    const res = await fetch(ENDPOINT + "?action=availability", { method:"GET" });
+    const data = await res.json();
+    applyAvailability(data.availability || data);
+  } catch(e){ /* teller niet beschikbaar → kaarten blijven gewoon selecteerbaar */ }
+}
+function applyAvailability(av){
+  let allFull = true;
+  document.querySelectorAll(".date-card").forEach(card => {
+    const id = card.dataset.session;
+    const info = av[id];
+    if (!info) { allFull = false; return; }
+    const cap = info.cap ?? CAP;
+    const left = Math.max(0, cap - (info.count || 0));
+    const seatsEl = card.querySelector("[data-seats]");
+    const seatsWrap = card.querySelector(".dc-seats");
+    if (info.full || left === 0) {
+      card.classList.add("full");
+      card.querySelector("input").disabled = true;
+      card.querySelector("input").checked = false;
+    } else {
+      allFull = false;
+      card.classList.remove("full");
+      card.querySelector("input").disabled = false;
+      seatsEl.textContent = left === 1 ? "laatste plaats" : "nog " + left + " van " + cap + " plaatsen";
+      seatsWrap.classList.toggle("warn", left <= 2);
+    }
+  });
+  document.querySelectorAll(".date-card").forEach(c => c.classList.toggle("selected", c.querySelector("input").checked));
+  if (!selectedSession()) pickedLabel.textContent = "— kies hierboven een datum";
+  setWaitlistMode(allFull);
+}
+function setWaitlistMode(on){
+  waitlistMode = on;
+  waitlistNote.hidden = !on;
+  if (on) {
+    document.getElementById("formEyebrow").textContent = "Schrijf je in op de wachtlijst";
+    pickedLabel.textContent = "wachtlijst — alle tafels zijn volzet";
+    btn.textContent = "Zet me op de wachtlijst";
+  }
+}
+
+/* ---------- versturen ---------- */
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  hideMsg();
+
+  const session = waitlistMode ? "wachtlijst" : selectedSession();
+  if (!session) return showMsg("warn", "Kies eerst een ochtend hierboven — klik op een van de vier datums.");
+
+  const val = id => document.getElementById(id).value.trim();
+  const payload = {
+    session,
+    voornaam: val("f-voornaam"),
+    achternaam: val("f-achternaam"),
+    bedrijf: val("f-bedrijf"),
+    functie: val("f-functie"),
+    email: val("f-email"),
+    gsm: val("f-gsm"),
+    opmerkingen: val("f-opmerkingen"),
+    website: val("f-website"),           // honeypot
+    bron: "landingspagina"
+  };
+  if (!payload.voornaam || !payload.achternaam || !payload.bedrijf || !payload.email)
+    return showMsg("warn", "Vul de verplichte velden in: voornaam, achternaam, bedrijf en e-mail.");
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email))
+    return showMsg("warn", "Dat e-mailadres lijkt niet te kloppen — kijk je even na?");
+
+  if (!live) return mailtoFallback(payload);
+
+  btn.disabled = true; const oldTxt = btn.textContent; btn.textContent = "Even geduld…";
+  try {
+    const res = await fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (data.ok) {
+      showSuccess(payload, session);
+    } else if (data.reason === "full") {
+      showMsg("warn", "Oei — deze ochtend raakte nét volzet. Kies hierboven gerust een andere datum of stad.");
+      if (data.availability) applyAvailability(data.availability);
+    } else {
+      throw new Error(data.error || "unknown");
+    }
+  } catch(err) {
+    showMsg("err", "Er liep iets mis bij het versturen. Probeer opnieuw, of mail rechtstreeks naar " + FALLBACK_EMAIL + " met je naam en gekozen datum.");
+  } finally {
+    btn.disabled = false; btn.textContent = oldTxt;
+  }
+});
+
+function showSuccess(p, session){
+  document.querySelector(".form-grid").style.display = "none";
+  document.querySelector(".submit-row").style.display = "none";
+  document.querySelector(".consent").style.display = "none";
+  document.querySelector(".picked").style.display = "none";
+  document.getElementById("formEyebrow").textContent = session === "wachtlijst" ? "Op de wachtlijst" : "Bevestigd";
+  const s = document.getElementById("successPanel");
+  document.getElementById("successTitle").textContent = "Genoteerd, " + p.voornaam + "!";
+  document.getElementById("successText").innerHTML = session === "wachtlijst"
+    ? "Je staat op de wachtlijst. Zodra er een plaats vrijkomt of er nieuwe datums bijkomen, hoor je het als eerste — persoonlijk, via mail."
+    : "Je plaats voor <strong style='color:var(--navy)'>" + LABELS[session] + "</strong> is gereserveerd. Je ontvangt zo een bevestigingsmail met agenda-uitnodiging (kijk ook even bij je spam). Tot dan aan tafel!";
+  s.style.display = "block";
+  s.scrollIntoView({ behavior:"smooth", block:"center" });
+  loadAvailability();
+}
+
+function mailtoFallback(p){
+  const body = encodeURIComponent(
+    "Beste Thierry,\n\nGraag reserveer ik een plaats voor de ontbijtsessie.\n\n" +
+    "Datum: " + LABELS[p.session] + "\nNaam: " + p.voornaam + " " + p.achternaam +
+    "\nBedrijf: " + p.bedrijf + (p.functie ? "\nFunctie: " + p.functie : "") +
+    "\nE-mail: " + p.email + (p.gsm ? "\nGSM: " + p.gsm : "") +
+    (p.opmerkingen ? "\nOpmerkingen: " + p.opmerkingen : "") + "\n\nTot dan!"
+  );
+  const subject = encodeURIComponent("Inschrijving Business Breakfast — " + LABELS[p.session]);
+  window.location.href = "mailto:" + FALLBACK_EMAIL + "?subject=" + subject + "&body=" + body;
+  showMsg("warn", "Je mailprogramma opent zich met een voorgevulde inschrijving — verzenden en je aanvraag is binnen. (Tip voor de beheerder: koppel de Apps Script-URL in de pagina om inschrijvingen automatisch te verwerken.)");
+}
+
+function showMsg(type, text){ msg.className = "form-msg " + type; msg.textContent = text; }
+function hideMsg(){ msg.className = "form-msg"; msg.textContent = ""; }
+
+loadAvailability();
+setInterval(loadAvailability, 60000); // teller elke minuut verversen
+</script>
+</body>
+</html>
