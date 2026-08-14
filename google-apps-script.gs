@@ -28,8 +28,11 @@ var CONFIG = {
   SENDER_NAME: 'Thierry Moubax — AI Compass',
   REPLY_TO: 'thierry@aicompass.ai',
 
-  // Optioneel: plak hier de "Inbound Webhook"-URL van een GoHighLevel-workflow
-  // en elke inschrijving wordt meteen als lead doorgestuurd naar je CRM.
+  // GoHighLevel/Rainmaker-koppeling: elke inschrijving wordt als contact (met tags)
+  // in het CRM gezet via de API. De token staat NIET in deze code maar in
+  // Projectinstellingen → Scriptversheimen ("Script properties") onder de sleutel GHL_TOKEN.
+  GHL_LOCATION_ID: '7JCSAkytJkcWButQOduL',
+  // Alternatief (niet nodig als GHL_TOKEN is ingesteld): een Inbound-Webhook-URL.
   GHL_WEBHOOK_URL: '',
 
   // Sessies + capaciteit + locatie. Datum sluiten? Zet cap op 0. Extra datum?
@@ -113,9 +116,9 @@ function doPost(e) {
     var reg = { session: session, label: sess.label, voornaam: voornaam, achternaam: achternaam,
                 bedrijf: bedrijf, functie: functie, email: email, gsm: gsm,
                 opmerkingen: opmerkingen, bron: bron };
-    try { if (CONFIG.SEND_CONFIRMATION) sendConfirmation_(reg); } catch (err) { log_('bevestiging mislukt: ' + err); }
+    try { if (CONFIG.SEND_CONFIRMATION && !result.duplicate) sendConfirmation_(reg); } catch (err) { log_('bevestiging mislukt: ' + err); }
     try { if (!result.duplicate) notifyOwner_(reg, result.availability); } catch (err) { log_('notificatie mislukt: ' + err); }
-    try { if (CONFIG.GHL_WEBHOOK_URL && !result.duplicate) pushToGhl_(reg); } catch (err) { log_('GHL-webhook mislukt: ' + err); }
+    try { if (!result.duplicate) pushToGhl_(reg); } catch (err) { log_('GHL-koppeling mislukt: ' + err); }
   }
 
   return json_(result);
@@ -255,6 +258,33 @@ function notifyOwner_(reg, availability) {
 /* ============================== INTEGRATIES ============================== */
 
 function pushToGhl_(reg) {
+  var tags = ['business-breakfast', 'boek-launch', reg.session];
+
+  // Voorkeursroute: rechtstreeks via de API (Private Integration-token in Script properties).
+  var token = PropertiesService.getScriptProperties().getProperty('GHL_TOKEN');
+  if (token) {
+    var resp = UrlFetchApp.fetch('https://services.leadconnectorhq.com/contacts/upsert', {
+      method: 'post',
+      contentType: 'application/json',
+      headers: { Authorization: 'Bearer ' + token, Version: '2021-07-28' },
+      payload: JSON.stringify({
+        locationId: CONFIG.GHL_LOCATION_ID,
+        firstName: reg.voornaam,
+        lastName: reg.achternaam,
+        email: reg.email,
+        phone: reg.gsm || null,
+        companyName: reg.bedrijf,
+        source: 'Business Breakfast landingspagina',
+        tags: tags
+      }),
+      muteHttpExceptions: true
+    });
+    if (resp.getResponseCode() >= 300) log_('GHL-upsert antwoordde ' + resp.getResponseCode() + ': ' + resp.getContentText().slice(0, 300));
+    return;
+  }
+
+  // Alternatief: inbound webhook (als er geen token is ingesteld).
+  if (!CONFIG.GHL_WEBHOOK_URL) return;
   UrlFetchApp.fetch(CONFIG.GHL_WEBHOOK_URL, {
     method: 'post',
     contentType: 'application/json',
@@ -267,12 +297,26 @@ function pushToGhl_(reg) {
       job_title: reg.functie,
       notes: reg.opmerkingen,
       source: 'Business Breakfast landingspagina',
-      tags: ['business-breakfast', 'boek-launch', reg.session],
+      tags: tags,
       session: reg.session,
       session_label: reg.label
     }),
     muteHttpExceptions: true
   });
+}
+
+/**
+ * Eenmalig uitvoeren na het instellen van GHL_TOKEN: zet Peter Pintens
+ * (eerste inschrijving, vr 18/9 Mechelen) als getagd contact in het CRM.
+ */
+function syncPeterNaarCrm() {
+  pushToGhl_({
+    session: '2026-09-18', label: CONFIG.SESSIONS['2026-09-18'].label,
+    voornaam: 'Peter', achternaam: 'Pintens', bedrijf: 'La Lorraine Bakery Group',
+    functie: 'VP Marketing', email: 'p.pintens@llbg.com', gsm: '+32473610411',
+    opmerkingen: '', bron: 'e-mail (eerste inschrijving)'
+  });
+  console.log('Klaar — controleer het contact in Rainmaker (Contacts).');
 }
 
 /* ============================== HELPERS ============================== */
